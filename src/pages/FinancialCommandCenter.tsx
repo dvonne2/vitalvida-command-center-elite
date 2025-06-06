@@ -11,6 +11,7 @@ import ElumeluPanel from "@/components/command/ElumeluPanel";
 import AuditPanel from "@/components/command/AuditPanel";
 import OlsavskyPanel from "@/components/command/OlsavskyPanel";
 import BookkeepingPanel from "@/components/command/BookkeepingPanel";
+import CriticalAlertsBar from "@/components/command/CriticalAlertsBar";
 
 const CommandCenterContent = () => {
   const { user, logout, auditLog } = useAuth();
@@ -69,6 +70,9 @@ const CommandCenterContent = () => {
           </div>
         </div>
       </div>
+
+      {/* Critical Alerts Bar */}
+      <CriticalAlertsBar />
 
       <div className="max-w-7xl mx-auto px-6 py-6">
         <Tabs defaultValue="dangote" className="space-y-6" onValueChange={handleTabChange}>
