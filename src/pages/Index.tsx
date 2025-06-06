@@ -4,7 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AlertTriangle, TrendingUp, DollarSign, Users, Package, Clock, Shield, Download } from "lucide-react";
+import { AlertTriangle, TrendingUp, DollarSign, Users, Package, Clock, Shield, Download, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import CashExposureMap from "@/components/CashExposureMap";
 import UnrecoveredValueDashboard from "@/components/UnrecoveredValueDashboard";
 import DADisciplineMatrix from "@/components/DADisciplineMatrix";
@@ -38,6 +39,13 @@ const Index = () => {
               <p className="text-sm text-gray-600">Dangote Control × Elumelu Intelligence</p>
             </div>
             <div className="flex items-center gap-4">
+              <Link to="/fc">
+                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">
+                  <Shield className="w-4 h-4 mr-2" />
+                  FC Portal
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
               <select 
                 value={userRole} 
                 onChange={(e) => setUserRole(e.target.value as any)}
