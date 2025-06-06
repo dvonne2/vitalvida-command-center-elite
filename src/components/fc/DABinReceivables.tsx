@@ -120,7 +120,7 @@ const DABinReceivables = ({ canEdit }: DABinReceivablesProps) => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-400">Idle > 5 Days</p>
+                <p className="text-sm text-gray-400">Idle &gt; 5 Days</p>
                 <p className="text-2xl font-bold text-orange-400">{binData.filter(b => b.daysIdle > 5).length}</p>
               </div>
               <Clock className="w-8 h-8 text-orange-400" />
