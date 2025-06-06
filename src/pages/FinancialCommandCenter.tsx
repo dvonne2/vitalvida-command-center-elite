@@ -79,23 +79,23 @@ const CommandCenterContent = () => {
           <TabsList className="grid w-full grid-cols-5 bg-gray-800">
             <TabsTrigger value="dangote" className="flex items-center gap-2 data-[state=active]:bg-yellow-500/20">
               <Package className="w-4 h-4" />
-              Dangote Control
+              Aliko Dangote Control
             </TabsTrigger>
             <TabsTrigger value="elumelu" className="flex items-center gap-2 data-[state=active]:bg-green-500/20">
               <TrendingUp className="w-4 h-4" />
-              Elumelu Intelligence
+              Tony Elumelu Intelligence
             </TabsTrigger>
             <TabsTrigger value="audit" className="flex items-center gap-2 data-[state=active]:bg-red-500/20">
               <AlertTriangle className="w-4 h-4" />
-              Audit Enforcement
+              Indra Nooyi Audit
             </TabsTrigger>
             <TabsTrigger value="olsavsky" className="flex items-center gap-2 data-[state=active]:bg-blue-500/20">
               <DollarSign className="w-4 h-4" />
-              CFO Dashboard
+              Brian Olsavsky CFO
             </TabsTrigger>
             <TabsTrigger value="bookkeeping" className="flex items-center gap-2 data-[state=active]:bg-purple-500/20">
               <Users className="w-4 h-4" />
-              Bookkeeping Panel
+              Shelley Reynolds Bookkeeping
             </TabsTrigger>
           </TabsList>
 
