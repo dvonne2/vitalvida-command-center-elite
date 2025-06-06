@@ -153,10 +153,10 @@ const DADisciplineMatrix = ({ canEdit }: DADisciplineMatrixProps) => {
         <div className="mt-4 p-3 bg-orange-50 rounded-lg">
           <div className="text-sm font-medium text-orange-800">Enforcement Rules</div>
           <div className="text-xs text-orange-600">
-            • 3+ late reports = automatic probation
-            • Any system bypass = immediate review
-            • Cash exposure >₦300k = locked dispatch
-            • Efficiency <70% = performance improvement plan
+            • 3+ late reports = automatic probation<br />
+            • Any system bypass = immediate review<br />
+            • Cash exposure &gt;₦300k = locked dispatch<br />
+            • Efficiency &lt;70% = performance improvement plan
           </div>
         </div>
       </CardContent>

@@ -85,7 +85,7 @@ const UnsellableStockTracker = () => {
         <div className="mt-4 p-3 bg-orange-50 rounded-lg">
           <div className="text-sm font-medium text-orange-800">Recovery Action Required</div>
           <div className="text-xs text-orange-600">
-            Items with DAs >14 days require immediate return. Expired items need disposal authorization.
+            Items with DAs &gt;14 days require immediate return. Expired items need disposal authorization.
           </div>
         </div>
       </CardContent>

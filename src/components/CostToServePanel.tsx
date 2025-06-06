@@ -54,7 +54,7 @@ const CostToServePanel = () => {
         <div className="mt-4 p-3 bg-blue-50 rounded-lg">
           <div className="text-sm font-medium text-blue-800">Efficiency Target</div>
           <div className="text-xs text-blue-600">
-            Target: <₦800 per fulfilled order. Current average: ₦850 (+6.25% over target)
+            Target: ₦800 per fulfilled order. Current average: ₦850 (+6.25% over target)
           </div>
         </div>
       </CardContent>
