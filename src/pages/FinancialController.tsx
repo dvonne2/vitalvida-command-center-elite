@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AlertTriangle, Shield, DollarSign, Users, Package, TrendingUp, FileText, Download } from "lucide-react";
+import { AlertTriangle, Shield, DollarSign, Users, Package, TrendingUp, FileText, Download, Eye, Ban } from "lucide-react";
 import DABinReceivables from "@/components/fc/DABinReceivables";
 import PaymentReconciliation from "@/components/fc/PaymentReconciliation";
 import BonusEligibilityControl from "@/components/fc/BonusEligibilityControl";
@@ -12,6 +12,8 @@ import ExceptionDashboard from "@/components/fc/ExceptionDashboard";
 import CashFlowForecast from "@/components/fc/CashFlowForecast";
 import BudgetTracker from "@/components/fc/BudgetTracker";
 import AuditTrail from "@/components/fc/AuditTrail";
+import AntiFraudPanel from "@/components/fc/AntiFraudPanel";
+import BoardGovernanceEmail from "@/components/fc/BoardGovernanceEmail";
 
 const FinancialController = () => {
   const [userRole, setUserRole] = useState<'CEO' | 'FC' | 'Bookkeeper'>('FC');
@@ -20,7 +22,8 @@ const FinancialController = () => {
   const criticalAlerts = [
     { type: 'danger', message: 'DA Lagos-3 cash exposure exceeds ₦300k limit', value: '₦347,500', module: 'receivables' },
     { type: 'warning', message: 'Payment-Order mismatch detected', value: '₦75,200', module: 'payments' },
-    { type: 'danger', message: 'Bonus payout would exceed cash threshold', value: '₦125,000', module: 'bonuses' }
+    { type: 'danger', message: 'Bonus payout would exceed cash threshold', value: '₦125,000', module: 'bonuses' },
+    { type: 'critical', message: '3 fraud violations detected in last 24 hours', value: 'IA-103', module: 'fraud' }
   ];
 
   const canApprove = userRole === 'CEO' || userRole === 'FC';
@@ -78,7 +81,7 @@ const FinancialController = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-6">
         <Tabs defaultValue="receivables" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-7 bg-gray-800">
+          <TabsList className="grid w-full grid-cols-9 bg-gray-800">
             <TabsTrigger value="receivables" className="flex items-center gap-2 data-[state=active]:bg-yellow-500/20">
               <Package className="w-4 h-4" />
               Receivables
@@ -95,6 +98,10 @@ const FinancialController = () => {
               <AlertTriangle className="w-4 h-4" />
               Exceptions
             </TabsTrigger>
+            <TabsTrigger value="fraud" className="flex items-center gap-2 data-[state=active]:bg-red-500/20">
+              <Ban className="w-4 h-4" />
+              Anti-Fraud
+            </TabsTrigger>
             <TabsTrigger value="cashflow" className="flex items-center gap-2 data-[state=active]:bg-yellow-500/20">
               <TrendingUp className="w-4 h-4" />
               Cash Flow
@@ -106,6 +113,10 @@ const FinancialController = () => {
             <TabsTrigger value="audit" className="flex items-center gap-2 data-[state=active]:bg-yellow-500/20">
               <Shield className="w-4 h-4" />
               Audit
+            </TabsTrigger>
+            <TabsTrigger value="governance" className="flex items-center gap-2 data-[state=active]:bg-blue-500/20">
+              <Eye className="w-4 h-4" />
+              Board Reports
             </TabsTrigger>
           </TabsList>
 
@@ -129,6 +140,11 @@ const FinancialController = () => {
             <ExceptionDashboard />
           </TabsContent>
 
+          {/* Anti-Fraud Enforcement Panel */}
+          <TabsContent value="fraud">
+            <AntiFraudPanel canEdit={canEdit} />
+          </TabsContent>
+
           {/* Phase 5: Cash Flow Forecast */}
           <TabsContent value="cashflow">
             <CashFlowForecast />
@@ -142,6 +158,11 @@ const FinancialController = () => {
           {/* Phase 6: Audit Trail */}
           <TabsContent value="audit">
             <AuditTrail />
+          </TabsContent>
+
+          {/* Board Governance Email */}
+          <TabsContent value="governance">
+            <BoardGovernanceEmail />
           </TabsContent>
         </Tabs>
       </div>
